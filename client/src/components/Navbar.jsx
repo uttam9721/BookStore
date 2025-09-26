@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
+  const [searchTerm,setSearchTerm]=useState();
+  const navigate=useNavigate();
+
+
+  const submitHandler=(e)=>{
+    e.preventDefault();
+    navigate(`/product/search/${searchTerm}`);
+    setSearchTerm('');
+
+
+  }
   return (
     <div className="flex flex-col md:flex-row md:justify-around items-center bg-[#808a81] p-4 gap-4 md:gap-0">
       
       {/* Logo */}
       <div>
-        <h1 className="text-white font-bold text-xl cursor-pointer">{` {BookStore} `}</h1>
+        <Link to={'/'} className="text-white font-bold text-xl cursor-pointer">{` {BookStore} `}</Link>
       </div>
 
       {/* Menu */}
@@ -20,13 +32,15 @@ const Navbar = () => {
       </div>
 
       {/* Search */}
-      <div>
+      <form onSubmit={submitHandler}>
         <input
           className="border rounded p-1 bg-white border-none"
+          value={searchTerm}
+          onChange={(e)=>setSearchTerm(e.target.value)}
           type="text"
           placeholder="search here.."
         />
-      </div>
+      </form>
 
       {/* Cart */}
       <div>

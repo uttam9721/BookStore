@@ -28,3 +28,11 @@ export const getAllProducts=async(req,res)=>{
         res.json({error:error.message});
     }
 }
+
+
+export const getProductById=async (req,res)=>{
+    const id = req.params.id;
+    let product=await Products.findById(id);
+    if (!product) return res.json({message:'invalid id'})
+        res.json({message:'getById',product})
+}
