@@ -36,3 +36,10 @@ export const getProductById=async (req,res)=>{
     if (!product) return res.json({message:'invalid id'})
         res.json({message:'getById',product})
 }
+
+export const getProductByIdAndUpdate=async (req,res)=>{
+    const id = req.params.id;
+    let product=await Products.findByIdAndUpdate(id,req.body)
+    if (!product) return res.json({message:'invalid id'})
+        res.json({message:'updated successfully',product})
+}

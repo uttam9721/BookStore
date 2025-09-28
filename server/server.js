@@ -4,6 +4,7 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import productRouter from './routes/product.js'
 // import { fetchData } from "./config/db.js";
+import registerRouter from './routes/userRoutes.js'
 import cors from 'cors'
 // dotenv.config();
 const app = express();
@@ -31,6 +32,7 @@ app.get('/',(req,res)=>{
 // fetchData();
 
 app.use('/api/product',productRouter)
+app.use('/api/auth',registerRouter)
 
 app.listen(PORT,()=>{
     console.log(`Server is running on PORT ${PORT}`);

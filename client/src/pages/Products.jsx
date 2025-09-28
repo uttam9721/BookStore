@@ -14,7 +14,6 @@ const Products = () => {
             key={idx}
             className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col w-[250px] justify-around"
           >
-            {/* Image Container */}
             <div className="h-48 w-full flex items-center justify-center bg-gray-100 overflow-hidden">
               <img
                 src={item.img}
@@ -27,6 +26,7 @@ const Products = () => {
                 {item.title}
               </h2>
               <p className="text-gray-500 text-sm mb-4 line-clamp-3">{item.desc}</p>
+              <p className="text-gray-500 text-sm mb-4 line-clamp-3">Author:{item.author}  </p>
               <div className="flex items-center justify-between mt-auto">
                 <span className="text-blue-600 font-bold text-lg">₹{item.price}</span>
                 <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">

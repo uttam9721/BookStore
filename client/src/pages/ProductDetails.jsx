@@ -25,7 +25,6 @@ const ProductDetail = () => {
 
   return (
     <div className="container mx-auto p-6 flex flex-col md:flex-row gap-10">
-      {/* Left: Product Image */}
       <div className="flex-1 flex items-center justify-center bg-gray-100 rounded-xl overflow-hidden">
         <img
           src={product.img}
@@ -33,12 +32,11 @@ const ProductDetail = () => {
           className="w-[600px] h-[400px] object-contain transition-transform duration-300 hover:scale-105"
         />
       </div>
-
-      {/* Right: Product Details */}
       <div className="flex-1 flex flex-col justify-between">
         <div>
           <h1 className="text-3xl font-bold text-gray-800 mb-4">{product.title}</h1>
           <p className="text-gray-600 mb-6">{product.desc}</p>
+          <p className="text-gray-600 mb-6">Author:{product.author}</p>
           <span className="text-2xl font-semibold text-blue-600">₹{product.price}</span>
         </div>
 
