@@ -15,7 +15,7 @@ const Navbar = () => {
 
   }
   return (
-    <div className="flex flex-col md:flex-row md:justify-around items-center bg-[#808a81] p-4 gap-4 md:gap-0">
+    <div className="flex flex-col md:flex-row md:justify-around items-center bg-gray-900 p-4 gap-4 md:gap-0">
       
       {/* Logo */}
       <div>
@@ -26,7 +26,7 @@ const Navbar = () => {
       <div>
         <ul className="flex flex-col md:flex-row gap-4 md:gap-10 mt-2 md:mt-0">
           <li className="text-white font-bold cursor-pointer">Home</li>
-          <li className="text-white font-bold cursor-pointer">About</li>
+          <Link to={'/about'} className="text-white font-bold cursor-pointer">About</Link>
           <li className="text-white font-bold cursor-pointer">Contact</li>
         </ul>
       </div>
@@ -48,10 +48,10 @@ const Navbar = () => {
       </div>
 
       {/* Buttons */}
-      <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
+      <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 items-center">
         <Link to={'/cart'}><h3 className="text-white font-bold cursor-pointer"><FaShoppingCart /></h3></Link>
-        <button className="text-white font-bold cursor-pointer">Login</button>
-        <button className="text-white font-bold cursor-pointer">SignUp</button>
+        <Link to={'/login'} className="text-white font-bold cursor-pointer">Login</Link>
+        <Link to={'/register'} className="text-white font-bold cursor-pointer">SignUp</Link>
       </div>
 
     </div>
