@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import Products from "./Products";
 import axios from "axios";
 
 const ProductDetail = () => {
@@ -24,6 +25,7 @@ const ProductDetail = () => {
   }
 
   return (
+    <>
     <div className="container mx-auto p-6 flex flex-col md:flex-row gap-10">
       <div className="flex-1 flex items-center justify-center bg-gray-100 rounded-xl overflow-hidden">
         <img
@@ -52,7 +54,10 @@ const ProductDetail = () => {
           </Link>
         </div>
       </div>
+
     </div>
+          <Products />
+    </>
   );
 };
 

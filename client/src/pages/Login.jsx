@@ -1,14 +1,33 @@
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate=useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    // TODO: Add your login logic here
-    console.log('Logging in with:', { email, password });
+    try {
+      const fetchData =await axios.post('http://localhost:3000/api/auth/login',{
+        email,
+        password,
+      })
+      if (fetchData.data) {
+        toast.success('User logged in');  
+        navigate('/')
+      }else {
+      toast.error(response.data.message || 'Login failed!');
+    }
+      
+    } catch (error) {
+        console.error(error);
+    toast.error('Something went wrong!');
+      
+    }
   };
 
   return (
