@@ -50,8 +50,8 @@ const Navbar = () => {
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 items-center">
         <Link to={'/cart'}><h3 className="text-white font-bold cursor-pointer"><FaShoppingCart /></h3></Link>
-        <Link to={'/login'} className="text-white font-bold cursor-pointer">Login</Link>
-        <Link to={'/register'} className="text-white font-bold cursor-pointer">SignUp</Link>
+        <Link to={'/login'} className="text-white border rounded py-1 px-2 font-bold cursor-pointer">Login</Link>
+        <Link to={'/register'} className="text-white py-1 px-2 border rounded font-bold cursor-pointer">SignUp</Link>
       </div>
 
     </div>
