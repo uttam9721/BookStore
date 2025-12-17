@@ -21,7 +21,7 @@ const Hero = () => {
         <img 
           src={book} 
           alt="Book" 
-          className="w-[300px] max-w-sm rounded-lg shadow-xl object-cover"
+          className="w-[300px] max-w-sm rounded-lg shadow-xl object-cover  border border-[#ccc]"
         />
       </div>
     </div>

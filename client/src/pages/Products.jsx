@@ -60,7 +60,7 @@ const Products = () => {
         product.map((item) => (
           <div
             key={item._id}
-            className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 flex flex-col"
+            className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-[#ccc] flex flex-col"
           >
             <Link to={`/product/${item._id}`} className="block">
               {/* Image */}

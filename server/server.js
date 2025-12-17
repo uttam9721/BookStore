@@ -7,6 +7,7 @@ import productRouter from './routes/product.js'
 import registerRouter from './routes/userRoutes.js'
 // import {connectDB} from './config/db.js'
 // import cartRouter from '../server/routes/cartRouter.js'
+import cartRouter from './routes/cartRouter.js'
 import cors from 'cors'
 // import dotenv from 'dotenv'
 import { connectDB } from './config/db.js'
@@ -16,6 +17,8 @@ const app = express();
 const PORT=3000;
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 
 
 // console.log("port" process.env.PORT);
@@ -43,7 +46,7 @@ app.get('/',(req,res)=>{
 
 app.use('/api/product',productRouter)
 app.use('/api/auth',registerRouter)
-// app.use('/api/cart',cartRouter)
+app.use('/api/cart',cartRouter)
 
 app.listen(PORT,()=>{
     console.log(`Server is running on PORT ${PORT}`);

@@ -1,25 +1,56 @@
+// import mongoose from "mongoose";
+
+// const cartItemSchema=new mongoose.Schema({
+//     userId:{
+//         type:mongoose.Schema.Types.ObjectId,
+//         ref:"Product",
+//         require:true,
+//     },
+//     title:{type:String,require:true},
+//     price:{type:String,require:true},
+//     qty:{type:Number,require:true},
+//     img:{type:String,require:true},
+
+// });
+
+// const cartSchema=new mongoose.Schema({
+//     userId:{
+//         type:mongoose.Schema.Types.ObjectId,
+//         ref:"User",
+//         require:true
+//     },
+//     items:[cartItemSchema]
+// })
+
+// export const Cart=mongoose.model('Cart',cartSchema);
+
+
+
+
 import mongoose from "mongoose";
 
-const cartItemSchema=new mongoose.Schema({
-    userId:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"Product",
-        require:true,
-    },
-    title:{type:String,require:true},
-    price:{type:String,require:true},
-    qty:{type:Number,require:true},
-    img:{type:String,require:true},
-
+const cartItemSchema = new mongoose.Schema({
+  productId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Product",
+    required: true,
+  },
+  title: String,
+  price: Number,
+  qty: Number,
+  img: String,
 });
 
-const cartSchema=new mongoose.Schema({
-    userId:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"User",
-        require:true
+const cartSchema = new mongoose.Schema(
+  {
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
     },
-    items:[cartItemSchema]
-})
+    items: [cartItemSchema],
+  },
+  { timestamps: true }
+);
 
-export const Cart=mongoose.model('Cart',cartSchema);
+export const Cart = mongoose.model("Cart", cartSchema);
