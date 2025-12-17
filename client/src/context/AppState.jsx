@@ -19,10 +19,10 @@ const AppState = ({ children }) => {
   }
 
 
-  const addToCart=()=>{
-    setCart
+  // const addToCart=()=>{
+  //   setCart
 
-  }
+  // }
 
   useEffect(() => {
     fetchData();
