@@ -6,7 +6,8 @@ const AppState = ({ children }) => {
   const url = "http://localhost:3000/api";
   const [product, setProduct] = useState([]);
   const [user, setUser] = useState();
-  const [cart,setCart]=useState();
+  const [cart, setCart] = useState([]);
+
 
   async function fetchData() {
     try {

@@ -99,7 +99,7 @@ const Navbar = () => {
 
           <form onSubmit={submitHandler}>
             <input
-              className="p-1 rounded outline-none"
+              className="p-1 rounded border border-[#ccc] text-white font-bold"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search..."
